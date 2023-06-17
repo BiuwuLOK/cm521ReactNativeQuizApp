@@ -11,6 +11,7 @@ import {
   Animated,
   TouchableOpacity,
   interpolate,
+  Vibration
 } from 'react-native';
 
 var Sound = require('react-native-sound');
@@ -88,6 +89,8 @@ class App extends Component {
         this.state.sounds.correct.play()
       } else {
         this.state.sounds.incorrect.play()
+        Vibration.vibrate(500)
+
       }
     }
 
